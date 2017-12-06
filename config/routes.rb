@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  
+  
   #Routes for home
   get"/", :controller => "items", :action => "index"
   

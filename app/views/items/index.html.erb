@@ -18,7 +18,7 @@
 
       <% @items.each do |item| %>
       <tr>
-        <td> <a href="<%= item.url %>" target="_blank"> 
+        <td> <a href="<%= item.url %>" target="_blank" class="text-success"> 
           <%= item.name %>
         </a>
         </td>
@@ -26,9 +26,9 @@
         <td><%= item.comment %></td>
         <td><%= item.tagline %></td>
         <td>
-          <a href="/items/<%= item.id %>" class="btn btn-danger">Show</a>
-          <a href="/items/<%= item.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_item/<%= item.id %>" class="btn btn-primary" rel="nofollow">Delete</a>
+          <a href="/items/<%= item.id %>" class="btn-sm btn-danger">Show</a>
+          <a href="/items/<%= item.id %>/edit" class="btn-sm btn-warning">Edit</a>
+          <a href="/delete_item/<%= item.id %>" class="btn-sm btn-primary" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>
