@@ -11,8 +11,8 @@
       <dt>Url</dt>
       <dd><%= @item.url %></dd>
 
-      <dt>String</dt>
-      <dd><%= @item.string %></dd>
+      <dt>Comment</dt>
+      <dd><%= @item.comment %></dd>
 
       <dt>Tagline</dt>
       <dd><%= @item.tagline %></dd>
@@ -20,13 +20,13 @@
     </dl>
 
     <div class="btn-group btn-group-justified">
-      <a href="/items" class="btn btn-primary">
+      <a href="/items" class="btn btn-danger">
         Back
       </a>
       <a href="/items/<%= @item.id %>/edit" class="btn btn-warning">
         Edit
       </a>
-      <a href="/delete_item/<%= @item.id %>" class="btn btn-danger" rel="nofollow">
+      <a href="/delete_item/<%= @item.id %>" class="btn btn-primary" rel="nofollow">
         Delete
       </a>
     </div>

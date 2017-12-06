@@ -3,8 +3,8 @@ class CreateItems < ActiveRecord::Migration[5.0]
     create_table :items do |t|
       t.string :name
       t.string :url
-      t.string :string
-      t.string :tagline
+      t.text :comment
+      t.text :tagline
 
       t.timestamps
 

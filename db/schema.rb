@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20171202223131) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "url"
-    t.string "string"
-    t.string "tagline"
+    t.text "comment"
+    t.text "tagline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -23,12 +23,12 @@
         </a>
         </td>
         <td><%= item.url %></td>
-        <td><%= item.string %></td>
+        <td><%= item.comment %></td>
         <td><%= item.tagline %></td>
         <td>
-          <a href="/items/<%= item.id %>" class="btn btn-primary">Show</a>
+          <a href="/items/<%= item.id %>" class="btn btn-danger">Show</a>
           <a href="/items/<%= item.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_item/<%= item.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/delete_item/<%= item.id %>" class="btn btn-primary" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>

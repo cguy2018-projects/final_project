@@ -13,6 +13,6 @@
 class Like < ApplicationRecord
     
     belongs_to :user
-    belongs_to :posting
+    belongs_to :item
 
 end
