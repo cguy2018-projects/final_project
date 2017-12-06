@@ -11,14 +11,17 @@
       <tr>
         <th>Name</th>
         <th>Url</th>
-        <th>String</th>
+        <th>Comments</th>
         <th>Tagline</th>
         <th>Actions</th>
       </tr>
 
       <% @items.each do |item| %>
       <tr>
-        <td><%= item.name %></td>
+        <td> <a href="<%= item.url %>" target="_blank"> 
+          <%= item.name %>
+        </a>
+        </td>
         <td><%= item.url %></td>
         <td><%= item.string %></td>
         <td><%= item.tagline %></td>

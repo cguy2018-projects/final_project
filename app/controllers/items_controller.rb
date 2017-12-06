@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
 
     @item.name = params[:name]
     @item.url = params[:url]
-    @item.string = params[:string]
+    @item.comment = params[:comment]
     @item.tagline = params[:tagline]
 
     save_status = @item.save
@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
 
     @item.name = params[:name]
     @item.url = params[:url]
-    @item.string = params[:string]
+    @item.comment = params[:comment]
     @item.tagline = params[:tagline]
 
     save_status = @item.save
