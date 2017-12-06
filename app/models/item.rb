@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  name       :string
 #  url        :string
-#  comment     :string
+#  string     :string
 #  tagline    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
