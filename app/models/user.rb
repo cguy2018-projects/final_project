@@ -29,9 +29,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-  has_many :postings, :dependent => :destroy
+  has_many :items, :dependent => :destroy
   has_many :followers, :dependent => :destroy
   has_many :likes, :dependent => :destroy
   
-  has_many :items, :through => :postings, :source => :item
 end

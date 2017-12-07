@@ -13,5 +13,7 @@
 
 class Item < ApplicationRecord
     
-    has_one :user, :through => :posting, :source => :user
+    has_one :user
+    has_many :likes
+
 end

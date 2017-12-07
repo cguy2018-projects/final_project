@@ -8,17 +8,19 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>User</th>
-        <th>Actions</th>
+        <th>People I'm Following</th>
+        <th></th>
       </tr>
 
       <% @followers.each do |follower| %>
       <tr>
-        <td><%= follower.user_id %></td>
+        <td> <a href="/users/<%= follower.user_id %>" class="text-success"> 
+          <%= follower.user.username %>
+          </a> 
+        </td>
         <td>
-          <a href="/followers/<%= follower.id %>" class="btn-sm btn-danger">Show</a>
-          <a href="/followers/<%= follower.id %>/edit" class="btn-sm btn-warning">Edit</a>
-          <a href="/delete_follower/<%= follower.id %>" class="btn-sm btn-primary" rel="nofollow">Delete</a>
+          <a href="/followers/<%= follower.id %>" class="btn-sm btn-danger">User's Posts</a>
+          <a href="/delete_follower/<%= follower.id %>" class="btn-sm btn-primary" rel="nofollow">Unfollow</a>
         </td>
       </tr>
       <% end %>

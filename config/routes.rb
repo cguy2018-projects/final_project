@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  #Users
+  get "/users", :controller => "users", :action => "index"
+  get "/users/:id", :controller => "users", :action => "show"
   
   
   #Routes for home
@@ -55,9 +58,19 @@ Rails.application.routes.draw do
   # DELETE
   get "/delete_like/:id", :controller => "likes", :action => "destroy"
   #------------------------------
+  
+# Routes for the My_Like resource:
+  # READ
+  get "/my_likes", :controller => "likes", :action => "index"
+
+  #------------------------------
+    
 
   devise_for :users
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  
 end

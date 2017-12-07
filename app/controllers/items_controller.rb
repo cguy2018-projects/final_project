@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new
 
+    @item.id = params[:id]
     @item.name = params[:name]
     @item.url = params[:url]
     @item.comment = params[:comment]

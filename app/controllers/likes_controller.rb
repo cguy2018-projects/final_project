@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   def index
     @likes = Like.all
+    @items = Item.where({:user_id => current_user.id })
 
     render("likes/index.html.erb")
   end
@@ -21,8 +22,9 @@ class LikesController < ApplicationController
     @like = Like.new
 
     @like.user_id = params[:user_id]
-    @like.name = params[:name]
-    @like.posting_id = params[:posting_id]
+    @like.item_id = params[:item_id]
+
+    
 
     save_status = @like.save
 
@@ -42,9 +44,7 @@ class LikesController < ApplicationController
   def update
     @like = Like.find(params[:id])
 
-    @like.user_id = params[:user_id]
-    @like.name = params[:name]
-    @like.posting_id = params[:posting_id]
+    @like.user_id = params[:user_id]  
 
     save_status = @like.save
 

@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>
+    User
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Item</th>
+        <th>Comments</th>
+        <th>Add comment</th>
+        <th>Like/Unlike</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        
+        <td>
+          <a href="/like/<%= item.id %>" class="btn btn-primary">Like</a>
+          <a href="delete_like/<%= item.id %>" class="btn btn-primary">Unlike</a>
+        </td>
+        <td>
+          <a href="/items/<%= item.id %>" class="btn btn-primary">Show</a>
+          <a href="/items/<%= item.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_item/<%= item.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -5,6 +5,26 @@
   </h1>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-0">
+            <h3>Search</h3>
+        </div>
+    </div>
+    
+   <div class="row align-items-left">
+        <div class="col-md-4 col-md-offset-">
+            <form action="" class="search-form">
+              <div class="form-group has-feedback">
+            		<input type="text" class="form-control" name="search" id="search" placeholder="Insert Keyword Search">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <div class="row">
   <div class="col-md-12">
     <table class="table table-striped table-hover">
@@ -13,6 +33,7 @@
         <th>Url</th>
         <th>Comments</th>
         <th>Tagline</th>
+        <th>Like</th>
         <th>Actions</th>
       </tr>
 
@@ -25,10 +46,43 @@
         <td><%= item.url %></td>
         <td><%= item.comment %></td>
         <td><%= item.tagline %></td>
+        
+        
+     <% result=Like.find_by({ :user_id => current_user.id }) %>
+      
+     <% if result != nil %>
+          <a href="delete_like/<%= item.id %>" class="btn-xs btn-danger" rel="nofollow">
+                     Unlike
+          </a>
+      
+      
+      <% else %> 
+      
         <td>
-          <a href="/items/<%= item.id %>" class="btn-sm btn-danger">Show</a>
-          <a href="/items/<%= item.id %>/edit" class="btn-sm btn-warning">Edit</a>
-          <a href="/delete_item/<%= item.id %>" class="btn-sm btn-primary" rel="nofollow">Delete</a>
+         <form action="/create_like" method="post">
+           
+            <!-- Hidden input for authenticity token to protect from forgery -->
+            <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+            
+            <!-- Hidden input for author name -->
+            <input name="user_id" type="hidden" value="<%= current_user.id %>">
+            
+            <!-- Hidden input for item id-->
+            <input name="item_id" type="hidden" value="<%= item.id %>">
+           
+          <button class="btn-xs btn-success"> 
+            Like
+          </button>
+        </form>
+          
+      <% end %>
+          
+        </td>
+
+        <td>
+          <a href="/items/<%= item.id %>" class="btn-xs btn-danger">Show</a>
+          <a href="/items/<%= item.id %>/edit" class="btn-xs btn-warning">Edit</a>
+          <a href="/delete_item/<%= item.id %>" class="btn-xs btn-primary" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>
